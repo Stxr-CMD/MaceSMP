@@ -1,0 +1,65 @@
+# MaceSMP configuration
+
+cores:
+  # Icon shown next to Cores amounts, e.g. "+10 ♦ Cores". Left plain (no color
+  # code) so each message controls its own color around it.
+  icon: "♦"
+
+  kill-reward: 10
+
+  # If true, players ALSO lose cores when they die (never goes below 0)
+  victim-loses-cores: false
+  victim-loss-amount: 10
+
+  starting-balance: 0
+
+  # If true, the kill reward shows above the hotbar instead of in chat.
+  use-actionbar-for-kill-reward: false
+
+  anti-grind:
+    # Never reward a kill if the killer and victim share the same IP.
+    block-same-ip: true
+    # A killer can be rewarded for killing the same victim up to this many
+    # times, then no more rewards until the window below passes.
+    max-kills-per-victim-window: 5
+    same-victim-window-minutes: 5
+
+messages:
+  prefix: "&8[&bMaceSMP&8] &r"
+  kill-reward: "&4+{amount} {icon} Cores &7for killing &f{victim}"
+  kill-reward-actionbar: "&4{icon} &4+{amount} Cores"
+  victim-loss: "&c-{amount} {icon} Cores &7for dying to &f{killer}"
+  balance-self: "&7You have &b{amount} {icon} Cores&7."
+  balance-other: "&7{player} has &b{amount} {icon} Cores&7."
+  not-enough-cores: "&cYou don't have enough Cores for that."
+  purchase-success: "&aPurchased &f{item} &afor &b{price} {icon} Cores&a!"
+  no-permission: "&cYou don't have permission to do that."
+  player-not-found: "&cThat player could not be found."
+  invalid-amount: "&cPlease enter a valid positive number."
+  given-cores: "&aGave &b{amount} {icon} Cores &ato &f{player}&a."
+  set-cores: "&aSet &f{player}&a's Cores to &b{amount} {icon}&a."
+  received-cores: "&aYou received &b{amount} {icon} Cores&a!"
+  reload-success: "&aMaceSMP configuration reloaded."
+  scoreboard-on: "&aYour scoreboard is now &lON&a."
+  scoreboard-off: "&cYour scoreboard is now &lOFF&c."
+
+scoreboard:
+  enabled: true
+  update-interval-ticks: 20
+  title: "&b&lMACE&f&lSMP"
+  lines:
+    - ""
+    - "&7Player: &f{player}"
+    - "&7Cores: &b{cores} {icon}"
+    - "&7Kills: &f{kills}"
+    - ""
+    - "&fplay.macesmp.net"
+
+shop:
+  title: "&8Core Shop"
+  rows: 6
+
+pvp:
+  # Cancels Slow Falling the instant it's applied, no matter the source.
+  disable-slow-falling: true
+

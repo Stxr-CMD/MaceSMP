@@ -1,0 +1,51 @@
+name: MaceSMP
+version: '1.0.0'
+main: com.macesmp.plugin.MaceSMP
+api-version: '1.21'
+author: MaceSMP
+description: Cores currency, core shop, PvP kill rewards and a live scoreboard.
+softdepend: [PlaceholderAPI]
+
+commands:
+  cores:
+    description: Manage and check MaceSMP cores.
+    usage: /cores [balance|give|set|reload|history] [player] [amount]
+    aliases: [core, macecores]
+  coreshop:
+    description: Open the core shop.
+    usage: /coreshop
+    aliases: [cshop]
+  scoreboard:
+    description: Toggle your MaceSMP scoreboard.
+    usage: /scoreboard
+    aliases: [msb]
+  macesmp:
+    description: Show all MaceSMP commands.
+    usage: /macesmp
+    aliases: [macecore]
+
+permissions:
+  macesmp.admin:
+    description: Catch-all - grants every MaceSMP admin permission below. Don't hand this out if you want granular control; use the specific nodes instead.
+    default: op
+  macesmp.shop:
+    description: Allows use of the core shop.
+    default: true
+  macesmp.cores:
+    description: Allows checking your own core balance.
+    default: true
+  macesmp.cores.others:
+    description: Allows checking OTHER players' core balances.
+    default: op
+  macesmp.command.give:
+    description: Allows /cores give. Also requires actual server-op status, even with this granted.
+    default: op
+  macesmp.command.set:
+    description: Allows /cores set. Also requires actual server-op status, even with this granted.
+    default: op
+  macesmp.command.reload:
+    description: Allows /cores reload.
+    default: op
+  macesmp.command.history:
+    description: Allows /cores history and /cores logs (view any player's core transaction log).
+    default: op

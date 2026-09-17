@@ -1,0 +1,112 @@
+# MaceSMP Core Shop
+#
+# direct-items: buyable icons placed straight on the main /coreshop menu -
+# one click buys, no sub-menu. "slot" is the position (0-53, top-left to
+# bottom-right, 9 per row). categories: (see the docs comment further down)
+# still exist for anything you want grouped behind a sub-menu instead.
+#
+# Per item:
+#   material  - Bukkit Material name
+#   name      - display name (& color codes). Rename any time, purely cosmetic.
+#   lore      - list of lore lines. {price} and {icon} are auto-replaced.
+#   price     - cost in Cores. Left at 0 - set your own prices.
+#   amount    - how many the buyer receives per purchase
+#   slot      - required for direct-items: which slot it sits in (0-53)
+#   enchant   - OPTIONAL, "key:level" comma-separated for multiple, e.g.
+#               "sharpness:5,unbreaking:3". Real applied enchant, not cosmetic -
+#               on an ENCHANTED_BOOK it becomes a genuine stored enchant.
+#   command   - OPTIONAL. Runs this console command instead of giving the item.
+#               {player} = buyer's name. Leave it out to just hand over the item.
+
+direct-items:
+
+  - material: ENCHANTED_BOOK
+    name: "&b&lWind Burst I Book"
+    lore:
+      - "&7An enchanted book containing"
+      - "&7&oWind Burst I&r&7."
+      - ""
+      - "&ePrice: &b{price} {icon} Cores"
+    price: 0
+    amount: 1
+    enchant: "wind_burst:1"
+    slot: 22
+
+  - material: RED_CANDLE
+    name: "&c&lRed Key"
+    lore: ["&7A Red crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 12
+    # command: "crates give {player} red 1"
+
+  - material: YELLOW_CANDLE
+    name: "&e&lYellow Key"
+    lore: ["&7A Yellow crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 13
+    # command: "crates give {player} yellow 1"
+
+  - material: PINK_CANDLE
+    name: "&d&lPink Key"
+    lore: ["&7A Pink crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 14
+    # command: "crates give {player} pink 1"
+
+  - material: ORANGE_CANDLE
+    name: "&6&lOrange Key"
+    lore: ["&7An Orange crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 21
+    # command: "crates give {player} orange 1"
+
+  - material: BLUE_CANDLE
+    name: "&9&lBlue Key"
+    lore: ["&7A Blue crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 23
+    # command: "crates give {player} blue 1"
+
+  - material: LIME_CANDLE
+    name: "&a&lLime Key"
+    lore: ["&7A Lime crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 30
+    # command: "crates give {player} lime 1"
+
+  - material: CYAN_CANDLE
+    name: "&3&lCyan Key"
+    lore: ["&7A Cyan crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 31
+    # command: "crates give {player} cyan 1"
+
+  - material: PURPLE_CANDLE
+    name: "&5&lPurple Key"
+    lore: ["&7A Purple crate key.", "", "&ePrice: &b{price} {icon} Cores"]
+    price: 0
+    amount: 1
+    slot: 32
+    # command: "crates give {player} purple 1"
+
+# categories: (optional, none used right now) - a category is one icon that
+# opens a sub-menu of items, for when you WANT the extra "click in, then buy"
+# step, e.g. a big list you don't want cluttering the main page.
+# categories:
+#   example:
+#     icon: CHEST
+#     display-name: "&eExample Category"
+#     slot: 4
+#     items:
+#       - material: STONE
+#         name: "&7Stone"
+#         lore: ["&ePrice: &b{price} {icon} Cores"]
+#         price: 10
+#         amount: 1
